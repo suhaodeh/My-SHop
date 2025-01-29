@@ -1,0 +1,9 @@
+.nav{
+justify-content: center; 
+ background-color:#649b64;
+}
+
+.navlink:hover {
+    background-color: #649b64;
+ border-radius: 10px;   
+}
