@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';
+import CustomLoader from '../../components/user/CustomLoader/CustomLoader';
 import style from './Products.module.css'
 export default function ProductByCategory() {
     const {categoryId}=useParams();
@@ -24,7 +25,10 @@ export default function ProductByCategory() {
       {getProducts();},[])
     
       if(isloading){
-        return <h2>Loading....</h2>
+        return <div>
+              
+                <CustomLoader loading={isloading}/>
+            </div>
       }
 
   return (
@@ -35,7 +39,8 @@ export default function ProductByCategory() {
          <div className='col-md-4 col-sm-6' key={product._id}>
            <div className={`pt-5 ${style.products}`} style={{ animationDelay: `${index * 0.3}s` }}> 
              <img src={product.mainImage.secure_url} />
-             <h6>{product.name}</h6>
+             <h6 className={`mt-5 ${style.h6}`}>{product.name}</h6>
+             <h5 className={`${style.price}`}>Price:{product.price}</h5>
            </div>
          </div>
        )}

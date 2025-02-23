@@ -51,7 +51,18 @@ export default function Register() {
   return (
   <>
  
-<div className={` ${style.formdiv}`}>
+  <img className={`${style.logo}`} src={`/src/assets/images/logo2.png`} />
+  <h4 className={`${style.text}`}>Trolley-Shop</h4>
+ 
+ 
+  <img className={`${style.registerBG}`} src={`/src/assets/images/registerBg.jpg`}/>
+  
+  
+  <div>
+    <p className={`p-1  ${style.p}`}>Register now and enjoy a unique and easy shopping experience</p>
+  </div>
+ 
+<div className={`p-2 ${style.formdiv}`}>
 
   <Form onSubmit={handleSubmit(registerUser)} className={`d-flex flex-column mt-5 pt-5 ${style.form}`} >
    {serverError?<div className='text-danger'>{serverError}</div>:null}

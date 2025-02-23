@@ -1,0 +1,15 @@
+.empty{
+    color: red;
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+}
+.table{
+box-shadow: 5px 5px 10px red;
+}
+
+.checkOut{
+background-color: white;
+display: flex;
+margin: auto;
+}

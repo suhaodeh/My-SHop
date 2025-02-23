@@ -1,31 +1,46 @@
 body{
-    background-color: rgb(235, 228, 228);
+  background-color: black;
 }
 .products{
     display: flex;
     flex-direction: column;
 align-items: center;
+
+
 }
+
 .products img{
     width: 300px;
     height: 350px;
-   
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgb(126, 28, 28);
    
 }
 
+
+.products img:hover{
+  transform: translateY(-5px) ;
+
+}
 .products h2{
     font-size:medium;
     font-family:'Times New Roman', Times, serif;
+    color:  white;
 
 }
 .price{
-    color: brown;
+    color: white;
     text-align: center;
+    font-weight: bold;
 }
 .products a{
     
     color: black;
+    font-weight: bold;   
 }
+
+
 
 @keyframes fadeInUp {
     from {
@@ -42,11 +57,97 @@ align-items: center;
     animation: fadeInUp 1s ease-out;
     opacity: 0;
     animation-fill-mode: forwards;
+    .products {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 15px;
+      background-color: #fff;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      text-align: center;
+    }
   }
   
 
+  .filterContainer{
+    
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(20, 19, 19, 0.868);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+   
+  }
+ 
+  .filterContainer button {
+    background-color: red;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    color: white;
+    
+  }
   
- .details1{
-  gap: 50px;
- }
+  .filterContainer button:hover {
+    background-color: black;
+  }
+  .formcontrol{
+   
+    width:80px;
+  }
+  .detailssec{
+    background-color: black;
+    color: white;
+  }
 
+  .mainimg{
+    border-radius: 10px;
+    box-shadow: 4px 3px 7px red;
+  }
+  .subimgs{
+    margin: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .productDescription {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height:100px; 
+  }
+
+  .addcart{
+    background-color: white;
+    color: black;
+    font-size: large;
+    border-radius: 10px;
+  }
+
+  .addcart:hover{
+    background-color: red;
+  }
+  .reviews{
+    border: 2px white solid;
+    border-radius: 10px ;
+  }
+
+  .userReview{
+   
+    border: 1px solid white ;
+    border-radius: 10px;
+
+  }
+  .reviews p{
+    text-decoration: underline;
+    
+  }
+
+
+.h6{
+  color: white;
+}

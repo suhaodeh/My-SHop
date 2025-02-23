@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { Slide,toast } from 'react-toastify';
 
 import style from './Login.module.css'
@@ -19,6 +19,7 @@ export default function Login() {
     try{
     const response = await axios.post (`https://ecommerce-node4.onrender.com/auth/signin`,value);
     if(response.status===200){
+      localStorage.setItem("userToken",response.data.token);
     Navigate('/');
     }
   
@@ -33,8 +34,23 @@ setSereverError(error.response.data.message)
   }
 
   }
+  
+
+
   return (
   <>
+
+    <img className={`${style.logo}`} src={`/src/assets/images/logo2.png`} />
+    <h4 className={`${style.text}`}>Trolley-Shop</h4>
+   
+   
+    <img className={`${style.registerBG}`} src={`/src/assets/images/registerBg.jpg`}/>
+    
+    
+    <div>
+      <p className={`p-1  ${style.p}`}>Welcome to trolley shop,thanks for joining us </p>
+    </div>
+
   <div className={` ${style.formdiv}`}>
 
   <Form onSubmit={handleSubmit(registerUser)} className={`d-flex flex-column mt-5 pt-5 ${style.form}`} >
@@ -58,8 +74,11 @@ setSereverError(error.response.data.message)
         <Form.Control type="password" placeholder=" "  {...register("password",{required:"password is required"})} />
         {errors.password?<div className='text-danger'>{errors.password.message}</div> :null} 
       </FloatingLabel>
+      
+      
      
       <Button className={`${style.loginbtn}`}  type='submit' variant="primary" disabled={isLoading}>{isLoading?"Loading...":"Login"}</Button>
+      <Link to={'/auth/forgotpassword'} className={` mb-4 ${style.forgetLink}`}>Forgot Password?</Link>
       </Form>
       </div>
       </>
